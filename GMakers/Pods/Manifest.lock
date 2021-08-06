@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Kingfisher (6.3.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Kingfisher (~> 6.0)
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 43b778b11b555501ee69613b7e04800a66097254
+
+COCOAPODS: 1.10.2
