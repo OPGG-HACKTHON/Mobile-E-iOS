@@ -12,6 +12,9 @@
 		4F6D7FA726BD52DE00C1E551 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FA626BD52DE00C1E551 /* LoginViewController.swift */; };
 		4F6D7FA926BD52E700C1E551 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FA826BD52E700C1E551 /* MainViewController.swift */; };
 		4F6D7FAB26BD52F200C1E551 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FAA26BD52F200C1E551 /* ProfileViewController.swift */; };
+		4F6D7FAE26BD579400C1E551 /* azonix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D7FAD26BD579400C1E551 /* azonix.ttf */; };
+		4F6D7FB126BD581100C1E551 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FB026BD581100C1E551 /* BaseViewController.swift */; };
+		4F6D7FB326BD58ED00C1E551 /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FB226BD58ED00C1E551 /* FontUtil.swift */; };
 		4FDA62C626BD4A70004AC233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA62C526BD4A70004AC233 /* AppDelegate.swift */; };
 		4FDA62CF26BD4A71004AC233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA62CE26BD4A71004AC233 /* Assets.xcassets */; };
 		4FDA62D226BD4A71004AC233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA62D026BD4A71004AC233 /* LaunchScreen.storyboard */; };
@@ -22,6 +25,9 @@
 		4F6D7FA626BD52DE00C1E551 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4F6D7FA826BD52E700C1E551 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F6D7FAA26BD52F200C1E551 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4F6D7FAD26BD579400C1E551 /* azonix.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = azonix.ttf; sourceTree = "<group>"; };
+		4F6D7FB026BD581100C1E551 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F6D7FB226BD58ED00C1E551 /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		4FDA62C226BD4A70004AC233 /* GMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDA62C526BD4A70004AC233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FDA62CE26BD4A71004AC233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 		4F6D7F9D26BD50F900C1E551 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4F6D7FAC26BD577300C1E551 /* Font */,
 				4FDA62CE26BD4A71004AC233 /* Assets.xcassets */,
 				4FDA62D026BD4A71004AC233 /* LaunchScreen.storyboard */,
 				4FDA62D326BD4A71004AC233 /* Info.plist */,
@@ -66,6 +73,7 @@
 		4F6D7F9E26BD512600C1E551 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				4F6D7FAF26BD580800C1E551 /* Common */,
 				4F6D7FA226BD52A300C1E551 /* Splash */,
 				4F6D7FA326BD52AB00C1E551 /* Login */,
 				4F6D7FA426BD52B500C1E551 /* Main */,
@@ -74,11 +82,12 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
-		4F6D7F9F26BD513700C1E551 /* Model */ = {
+		4F6D7F9F26BD513700C1E551 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				4F6D7FB226BD58ED00C1E551 /* FontUtil.swift */,
 			);
-			path = Model;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		4F6D7FA226BD52A300C1E551 /* Splash */ = {
@@ -113,6 +122,22 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		4F6D7FAC26BD577300C1E551 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4F6D7FAD26BD579400C1E551 /* azonix.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4F6D7FAF26BD580800C1E551 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F6D7FB026BD581100C1E551 /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		4FDA62B926BD4A70004AC233 = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				4FDA62C526BD4A70004AC233 /* AppDelegate.swift */,
-				4F6D7F9F26BD513700C1E551 /* Model */,
+				4F6D7F9F26BD513700C1E551 /* Util */,
 				4F6D7F9E26BD512600C1E551 /* Feature */,
 				4F6D7F9D26BD50F900C1E551 /* Resource */,
 			);
@@ -211,6 +236,7 @@
 			files = (
 				4FDA62D226BD4A71004AC233 /* LaunchScreen.storyboard in Resources */,
 				4FDA62CF26BD4A71004AC233 /* Assets.xcassets in Resources */,
+				4F6D7FAE26BD579400C1E551 /* azonix.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +291,11 @@
 			files = (
 				4F6D7FA726BD52DE00C1E551 /* LoginViewController.swift in Sources */,
 				4FDA62C626BD4A70004AC233 /* AppDelegate.swift in Sources */,
+				4F6D7FB326BD58ED00C1E551 /* FontUtil.swift in Sources */,
 				4F6D7FAB26BD52F200C1E551 /* ProfileViewController.swift in Sources */,
 				4F6D7FA126BD52A100C1E551 /* SplashViewController.swift in Sources */,
 				4F6D7FA926BD52E700C1E551 /* MainViewController.swift in Sources */,
+				4F6D7FB126BD581100C1E551 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

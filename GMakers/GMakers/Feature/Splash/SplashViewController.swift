@@ -7,23 +7,31 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+final class SplashViewController: BaseViewController {
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  private let imageView = UIImageView()
+  private let titleLabel = UILabel()
+  
+  override func setAttribute() {
+    self.imageView.image = UIImage(named: "Splash")
+    self.imageView.contentMode = .scaleAspectFill
     
-    // Do any additional setup after loading the view.
+    self.titleLabel.text = "G-MAKERS"
+    self.titleLabel.textColor = .white
+    self.titleLabel.font = UIFont(name: "azonix", size: 40)
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  override func setConstraint() {
+    [self.imageView, self.titleLabel].forEach {
+      self.view.addSubview($0)
+    }
+    
+    self.imageView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    
+    self.titleLabel.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
+  }
 }
