@@ -12,13 +12,32 @@ final class SplashViewController: BaseViewController {
   private let imageView = UIImageView()
   private let titleLabel = UILabel()
   
+  
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      switch UserDefaultsManager.token {
+      case .some:
+        WindowManager.set(.main)
+        
+      case .none:
+        WindowManager.set(.login)
+      }
+    }
+  }
+  
+  
+  
+  
   override func setAttribute() {
     self.imageView.image = UIImage(named: "Splash")
     self.imageView.contentMode = .scaleAspectFill
     
     self.titleLabel.text = "G-MAKERS"
     self.titleLabel.textColor = .white
-    self.titleLabel.font = UIFont(name: "azonix", size: 40)
+    self.titleLabel.font = UIFont.Azonix.base(size: 40)
   }
   
   override func setConstraint() {
