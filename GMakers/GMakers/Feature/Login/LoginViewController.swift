@@ -11,6 +11,9 @@ import Alamofire
 
 final class LoginViewController: BaseViewController {
   
+  // id: dldbdjq
+  // pw: qwerasdf
+  
   // MARK: - Property
   
   private let logoLabel = UILabel()

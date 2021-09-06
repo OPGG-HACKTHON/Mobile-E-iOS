@@ -18,7 +18,7 @@ final class WindowManager {
       switch self {
       case .splash:   return SplashViewController()
       case .login:   return UINavigationController(rootViewController: LoginViewController())
-      case .main:    return MainViewController()
+      case .main:    return UINavigationController(rootViewController: MainViewController())
       }
     }
   }
