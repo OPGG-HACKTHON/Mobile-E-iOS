@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Alamofire
+
 final class SplashViewController: BaseViewController {
   
   private let imageView = UIImageView()
@@ -20,12 +22,52 @@ final class SplashViewController: BaseViewController {
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
       switch UserDefaultsManager.token {
       case .some:
-        WindowManager.set(.main)
+        switch UserDefaultsManager.tokenTime {
+        case .some(let time):
+          let now = Int(Date().timeIntervalSince1970)
+          let hour23 = 23 * 60 * 60
+          
+          switch now - time > hour23 {
+          case true: // 토큰 갱신
+            self.requestToken()
+            
+          case false: // 진행
+            WindowManager.set(.main)
+          }
+          
+        case .none:
+          self.requestToken()
+        }
         
       case .none:
         WindowManager.set(.login)
       }
     }
+  }
+  
+  private func requestToken() {
+    let param = [
+      "username": UserDefaultsManager.id!,
+      "password": UserDefaultsManager.password!
+    ]
+    let headers: HTTPHeaders = ["Content-Type": "application/json"]
+    
+    AF.request("http://52.79.197.237:8080/api/accounts/sign-in",
+               method: .post,
+               parameters: param,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON { response in
+                switch response.result {
+                case .failure:
+                  self.alertBase(title: nil, message: "아이디와 비밀번호를 확인해주세요")
+                  
+                case .success(let data):
+                  guard let temp = data as? [String: String], let token = temp["token"] else { return }
+                  UserDefaultsManager.token = token
+                  UserDefaultsManager.tokenTime = Int(Date().timeIntervalSince1970)
+                  WindowManager.set(.main)
+                }
+               }
   }
   
   

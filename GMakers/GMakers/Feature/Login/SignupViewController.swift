@@ -43,10 +43,10 @@ final class SignupViewController: BaseViewController {
   }
   
   private let titleLabel = UILabel()
-  private let idView = TextInputView()
-  private let pwView = TextInputView()
+  private let idView = MyTextField()
+  private let pwView = MyTextField()
   private let pwSubLabel = UILabel()
-  private let checkView = TextInputView()
+  private let checkView = MyTextField()
   private let signupButton = UIButton()
   
   
@@ -95,11 +95,14 @@ final class SignupViewController: BaseViewController {
       return
     }
     
+    self.presentIndicatorViewController()
     let provider = NetworkProvider(path: .signup)
     provider.sign(id: self.signupForm.id, password: self.signupForm.password) { [weak self] result in
       guard let self = self else { return }
       
       DispatchQueue.main.async {
+        self.dismissIndicatorViewController()
+        
         switch result {
         case .failure(let error):
           self.alertBase(title: "경고", message: error.localizedDescription.description, handler: nil)

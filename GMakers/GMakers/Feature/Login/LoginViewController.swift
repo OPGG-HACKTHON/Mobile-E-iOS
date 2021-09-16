@@ -17,8 +17,8 @@ final class LoginViewController: BaseViewController {
   // MARK: - Property
   
   private let logoLabel = UILabel()
-  private let idView = TextInputView()
-  private let passwordView = TextInputView()
+  private let idView = MyTextField()
+  private let passwordView = MyTextField()
   private let loginButton = UIButton()
   private let signupButton = UIButton()
   
@@ -50,19 +50,37 @@ final class LoginViewController: BaseViewController {
     let param = ["username": id, "password": password]
     let headers: HTTPHeaders = ["Content-Type": "application/json"]
     
+    self.presentIndicatorViewController()
+    
     AF.request("http://52.79.197.237:8080/api/accounts/sign-in",
                method: .post,
                parameters: param,
                encoding: JSONEncoding.default,
-               headers: headers).responseJSON { response in
+               headers: headers).responseJSON { [weak self] response in
+                guard let self = self else { return }
+                
+                self.dismissIndicatorViewController()
+                
                 switch response.result {
                 case .failure:
-                  self.alertBase(title: nil, message: "아이디와 비밀번호를 확인해주세요")
+                  self.alertBase(title: "아이디와 비밀번호를 확인해주세요", message: nil)
                   
                 case .success(let data):
-                  guard let temp = data as? [String: String], let token = temp["token"] else { return }
-                  UserDefaultsManager.token = token
-                  WindowManager.set(.main)
+                  guard let temp = data as? [String: String] else { return }
+                  
+                  if let message = temp["message"] {
+                    self.alertBase(title: message, message: nil)
+                    
+                  } else if let token = temp["token"] {
+                    UserDefaultsManager.id = id
+                    UserDefaultsManager.password = password
+                    UserDefaultsManager.token = token
+                    UserDefaultsManager.tokenTime = Int(Date().timeIntervalSince1970)
+                    WindowManager.set(.main)
+                    
+                  } else {
+                    self.alertBase(title: "error", message: "개발자에게 문의 해주세요.... ㅠㅡㅠ")
+                  }
                 }
                }
     

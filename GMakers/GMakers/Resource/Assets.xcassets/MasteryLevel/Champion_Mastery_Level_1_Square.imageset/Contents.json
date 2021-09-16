@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Champion_Mastery_Level_1_Square.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Champion_Mastery_Level_1_Square@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Champion_Mastery_Level_1_Square@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

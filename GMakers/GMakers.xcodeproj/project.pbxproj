@@ -8,10 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		13E3CEF6AAF0DC8466FB37A4 /* Pods_GMakers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C7BA2A4E962AD04DB7BDFA /* Pods_GMakers.framework */; };
+		4F138F5326EDF25500273B6F /* GCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5226EDF25500273B6F /* GCardCollectionViewCell.swift */; };
+		4F138F5526EE04BA00273B6F /* ProfileCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5426EE04BA00273B6F /* ProfileCardModel.swift */; };
+		4F138F5726EE3D9600273B6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5626EE3D9600273B6F /* ProfileViewController.swift */; };
+		4F138F5B26EE458300273B6F /* ProfileVerify1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5A26EE458300273B6F /* ProfileVerify1ViewController.swift */; };
+		4F138F5D26EE459100273B6F /* ProfileVerify2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5C26EE459100273B6F /* ProfileVerify2ViewController.swift */; };
+		4F138F5F26EF722B00273B6F /* ProfileAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F5E26EF722B00273B6F /* ProfileAddModel.swift */; };
+		4F138F6126EF759800273B6F /* APIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F6026EF759800273B6F /* APIEnum.swift */; };
+		4F138F6426EF972000273B6F /* ProfileVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F138F6326EF972000273B6F /* ProfileVerifyModel.swift */; };
 		4F177CE026C7E07C005F4AAA /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F177CDF26C7E07C005F4AAA /* NetworkProvider.swift */; };
 		4F177CE326C7EF3F005F4AAA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F177CE226C7EF3F005F4AAA /* UserModel.swift */; };
 		4F177CE526C8057B005F4AAA /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F177CE426C8057B005F4AAA /* UserDefaultsManager.swift */; };
-		4F66CF2C26C7978400A891AE /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66CF2B26C7978400A891AE /* TextInputView.swift */; };
+		4F66BDFE26ED03C500E5849F /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BDFD26ED03C500E5849F /* SelectView.swift */; };
+		4F66BE0026ED170B00E5849F /* ChampionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BDFF26ED170B00E5849F /* ChampionManager.swift */; };
+		4F66BE0226ED1BBF00E5849F /* ChampionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BE0126ED1BBF00E5849F /* ChampionView.swift */; };
+		4F66BE0426ED244900E5849F /* IntialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BE0326ED244900E5849F /* IntialCollectionViewCell.swift */; };
+		4F66BE0626ED28CC00E5849F /* ChampionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BE0526ED28CC00E5849F /* ChampionCollectionViewCell.swift */; };
+		4F66CF2C26C7978400A891AE /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66CF2B26C7978400A891AE /* MyTextField.swift */; };
 		4F66CF3B26C79E1200A891AE /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66CF3A26C79E1200A891AE /* UIFontExtension.swift */; };
 		4F66CF3D26C79E3400A891AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66CF3C26C79E3400A891AE /* UIColorExtension.swift */; };
 		4F66CF3F26C7A36000A891AE /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66CF3E26C7A36000A891AE /* WindowManager.swift */; };
@@ -30,6 +43,13 @@
 		4F6D7FAB26BD52F200C1E551 /* ProfileAdd1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FAA26BD52F200C1E551 /* ProfileAdd1ViewController.swift */; };
 		4F6D7FAE26BD579400C1E551 /* azonix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D7FAD26BD579400C1E551 /* azonix.ttf */; };
 		4F6D7FB126BD581100C1E551 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D7FB026BD581100C1E551 /* BaseViewController.swift */; };
+		4F6FCC1B26F2352400F169B3 /* ProfileInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC1A26F2352400F169B3 /* ProfileInfoModel.swift */; };
+		4F6FCC1E26F23C7C00F169B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC1D26F23C7C00F169B3 /* SearchViewController.swift */; };
+		4F6FCC2026F23FA800F169B3 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC1F26F23FA800F169B3 /* PaddingTextField.swift */; };
+		4F6FCC2226F242FB00F169B3 /* SearchProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC2126F242FB00F169B3 /* SearchProfileView.swift */; };
+		4F6FCC2426F255F800F169B3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC2326F255F800F169B3 /* UIViewExtension.swift */; };
+		4F6FCC2626F3782000F169B3 /* ChampionMasteryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FCC2526F3782000F169B3 /* ChampionMasteryCollectionViewCell.swift */; };
+		4FD78DF326F0D1ED0057AF72 /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD78DF226F0D1ED0057AF72 /* IndicatorViewController.swift */; };
 		4FDA62C626BD4A70004AC233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA62C526BD4A70004AC233 /* AppDelegate.swift */; };
 		4FDA62CF26BD4A71004AC233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA62CE26BD4A71004AC233 /* Assets.xcassets */; };
 		4FDA62D226BD4A71004AC233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA62D026BD4A71004AC233 /* LaunchScreen.storyboard */; };
@@ -39,10 +59,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F138F5226EDF25500273B6F /* GCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F138F5426EE04BA00273B6F /* ProfileCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardModel.swift; sourceTree = "<group>"; };
+		4F138F5626EE3D9600273B6F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4F138F5A26EE458300273B6F /* ProfileVerify1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVerify1ViewController.swift; sourceTree = "<group>"; };
+		4F138F5C26EE459100273B6F /* ProfileVerify2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVerify2ViewController.swift; sourceTree = "<group>"; };
+		4F138F5E26EF722B00273B6F /* ProfileAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddModel.swift; sourceTree = "<group>"; };
+		4F138F6026EF759800273B6F /* APIEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnum.swift; sourceTree = "<group>"; };
+		4F138F6326EF972000273B6F /* ProfileVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVerifyModel.swift; sourceTree = "<group>"; };
 		4F177CDF26C7E07C005F4AAA /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4F177CE226C7EF3F005F4AAA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4F177CE426C8057B005F4AAA /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		4F66CF2B26C7978400A891AE /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		4F66BDFD26ED03C500E5849F /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		4F66BDFF26ED170B00E5849F /* ChampionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionManager.swift; sourceTree = "<group>"; };
+		4F66BE0126ED1BBF00E5849F /* ChampionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionView.swift; sourceTree = "<group>"; };
+		4F66BE0326ED244900E5849F /* IntialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntialCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F66BE0526ED28CC00E5849F /* ChampionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F66CF2B26C7978400A891AE /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		4F66CF3A26C79E1200A891AE /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		4F66CF3C26C79E3400A891AE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4F66CF3E26C7A36000A891AE /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
@@ -61,6 +94,13 @@
 		4F6D7FAA26BD52F200C1E551 /* ProfileAdd1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAdd1ViewController.swift; sourceTree = "<group>"; };
 		4F6D7FAD26BD579400C1E551 /* azonix.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = azonix.ttf; sourceTree = "<group>"; };
 		4F6D7FB026BD581100C1E551 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F6FCC1A26F2352400F169B3 /* ProfileInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoModel.swift; sourceTree = "<group>"; };
+		4F6FCC1D26F23C7C00F169B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4F6FCC1F26F23FA800F169B3 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		4F6FCC2126F242FB00F169B3 /* SearchProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProfileView.swift; sourceTree = "<group>"; };
+		4F6FCC2326F255F800F169B3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4F6FCC2526F3782000F169B3 /* ChampionMasteryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionMasteryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FD78DF226F0D1ED0057AF72 /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
 		4FDA62C226BD4A70004AC233 /* GMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDA62C526BD4A70004AC233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FDA62CE26BD4A71004AC233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +135,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4F138F5826EE454B00273B6F /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				4F66BE0526ED28CC00E5849F /* ChampionCollectionViewCell.swift */,
+				4F6D7FAA26BD52F200C1E551 /* ProfileAdd1ViewController.swift */,
+				4FE992F826E65F52001AE68D /* ProfileAdd2ViewController.swift */,
+				4F66BE0326ED244900E5849F /* IntialCollectionViewCell.swift */,
+				4FE992FA26E65F70001AE68D /* ProfileAdd3ViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		4F138F5926EE456800273B6F /* Verify */ = {
+			isa = PBXGroup;
+			children = (
+				4F138F5A26EE458300273B6F /* ProfileVerify1ViewController.swift */,
+				4F138F5C26EE459100273B6F /* ProfileVerify2ViewController.swift */,
+			);
+			path = Verify;
+			sourceTree = "<group>";
+		};
 		4F177CDE26C7E04C005F4AAA /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +168,10 @@
 			isa = PBXGroup;
 			children = (
 				4F177CE226C7EF3F005F4AAA /* UserModel.swift */,
+				4F6FCC1A26F2352400F169B3 /* ProfileInfoModel.swift */,
+				4F138F5426EE04BA00273B6F /* ProfileCardModel.swift */,
+				4F138F5E26EF722B00273B6F /* ProfileAddModel.swift */,
+				4F138F6326EF972000273B6F /* ProfileVerifyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +183,7 @@
 				4F66CF5C26C7BF3A00A891AE /* SnapKitExtension.swift */,
 				4F66CF3C26C79E3400A891AE /* UIColorExtension.swift */,
 				4F66CF5826C7AE3200A891AE /* NSMutableAttributedStringExtension.swift */,
+				4F6FCC2326F255F800F169B3 /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +207,7 @@
 				4F6D7FA326BD52AB00C1E551 /* Login */,
 				4F6D7FA426BD52B500C1E551 /* Main */,
 				4F6D7FA526BD52B900C1E551 /* Profile */,
+				4F6FCC1C26F23C6400F169B3 /* Search */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -150,6 +217,8 @@
 			children = (
 				4F66CF3E26C7A36000A891AE /* WindowManager.swift */,
 				4F177CE426C8057B005F4AAA /* UserDefaultsManager.swift */,
+				4F66BDFF26ED170B00E5849F /* ChampionManager.swift */,
+				4F138F6026EF759800273B6F /* APIEnum.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -167,7 +236,6 @@
 			children = (
 				4F6D7FA626BD52DE00C1E551 /* LoginViewController.swift */,
 				4F66CF5A26C7AFD100A891AE /* SignupViewController.swift */,
-				4F66CF2B26C7978400A891AE /* TextInputView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -183,10 +251,11 @@
 		4F6D7FA526BD52B900C1E551 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4F138F5626EE3D9600273B6F /* ProfileViewController.swift */,
+				4F6FCC2526F3782000F169B3 /* ChampionMasteryCollectionViewCell.swift */,
 				4FE992F626E6541C001AE68D /* ProfileBaseViewController.swift */,
-				4F6D7FAA26BD52F200C1E551 /* ProfileAdd1ViewController.swift */,
-				4FE992F826E65F52001AE68D /* ProfileAdd2ViewController.swift */,
-				4FE992FA26E65F70001AE68D /* ProfileAdd3ViewController.swift */,
+				4F138F5826EE454B00273B6F /* Add */,
+				4F138F5926EE456800273B6F /* Verify */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -209,8 +278,23 @@
 			isa = PBXGroup;
 			children = (
 				4F6D7FB026BD581100C1E551 /* BaseViewController.swift */,
+				4F66CF2B26C7978400A891AE /* MyTextField.swift */,
+				4F66BDFD26ED03C500E5849F /* SelectView.swift */,
+				4F66BE0126ED1BBF00E5849F /* ChampionView.swift */,
+				4F138F5226EDF25500273B6F /* GCardCollectionViewCell.swift */,
+				4FD78DF226F0D1ED0057AF72 /* IndicatorViewController.swift */,
+				4F6FCC1F26F23FA800F169B3 /* PaddingTextField.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4F6FCC1C26F23C6400F169B3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4F6FCC1D26F23C7C00F169B3 /* SearchViewController.swift */,
+				4F6FCC2126F242FB00F169B3 /* SearchProfileView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		4FDA62B926BD4A70004AC233 = {
@@ -374,19 +458,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6D7FA726BD52DE00C1E551 /* LoginViewController.swift in Sources */,
+				4F138F5F26EF722B00273B6F /* ProfileAddModel.swift in Sources */,
+				4F6FCC2626F3782000F169B3 /* ChampionMasteryCollectionViewCell.swift in Sources */,
+				4F138F5526EE04BA00273B6F /* ProfileCardModel.swift in Sources */,
 				4FE992F726E6541C001AE68D /* ProfileBaseViewController.swift in Sources */,
+				4F138F5B26EE458300273B6F /* ProfileVerify1ViewController.swift in Sources */,
+				4F66BE0026ED170B00E5849F /* ChampionManager.swift in Sources */,
 				4F66CF3B26C79E1200A891AE /* UIFontExtension.swift in Sources */,
+				4F6FCC1B26F2352400F169B3 /* ProfileInfoModel.swift in Sources */,
 				4FDA62C626BD4A70004AC233 /* AppDelegate.swift in Sources */,
+				4F138F5726EE3D9600273B6F /* ProfileViewController.swift in Sources */,
+				4F6FCC2226F242FB00F169B3 /* SearchProfileView.swift in Sources */,
+				4F138F6126EF759800273B6F /* APIEnum.swift in Sources */,
 				4F6D7FAB26BD52F200C1E551 /* ProfileAdd1ViewController.swift in Sources */,
+				4FD78DF326F0D1ED0057AF72 /* IndicatorViewController.swift in Sources */,
+				4F6FCC2026F23FA800F169B3 /* PaddingTextField.swift in Sources */,
 				4F6D7FA126BD52A100C1E551 /* SplashViewController.swift in Sources */,
+				4F138F5326EDF25500273B6F /* GCardCollectionViewCell.swift in Sources */,
+				4F6FCC1E26F23C7C00F169B3 /* SearchViewController.swift in Sources */,
 				4F66CF3D26C79E3400A891AE /* UIColorExtension.swift in Sources */,
+				4F138F5D26EE459100273B6F /* ProfileVerify2ViewController.swift in Sources */,
 				4F177CE526C8057B005F4AAA /* UserDefaultsManager.swift in Sources */,
 				4F66CF5B26C7AFD100A891AE /* SignupViewController.swift in Sources */,
+				4F66BE0626ED28CC00E5849F /* ChampionCollectionViewCell.swift in Sources */,
 				4F177CE026C7E07C005F4AAA /* NetworkProvider.swift in Sources */,
+				4F66BE0226ED1BBF00E5849F /* ChampionView.swift in Sources */,
+				4F138F6426EF972000273B6F /* ProfileVerifyModel.swift in Sources */,
+				4F66BDFE26ED03C500E5849F /* SelectView.swift in Sources */,
 				4F6D7FA926BD52E700C1E551 /* MainViewController.swift in Sources */,
-				4F66CF2C26C7978400A891AE /* TextInputView.swift in Sources */,
+				4F66CF2C26C7978400A891AE /* MyTextField.swift in Sources */,
+				4F66BE0426ED244900E5849F /* IntialCollectionViewCell.swift in Sources */,
 				4F66CF5926C7AE3200A891AE /* NSMutableAttributedStringExtension.swift in Sources */,
 				4F6D7FB126BD581100C1E551 /* BaseViewController.swift in Sources */,
+				4F6FCC2426F255F800F169B3 /* UIViewExtension.swift in Sources */,
 				4F66CF3F26C7A36000A891AE /* WindowManager.swift in Sources */,
 				4FE992FB26E65F70001AE68D /* ProfileAdd3ViewController.swift in Sources */,
 				4F177CE326C7EF3F005F4AAA /* UserModel.swift in Sources */,
@@ -532,6 +636,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZLN97H98PA;
 				INFOPLIST_FILE = GMakers/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -539,10 +644,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPs.GMakers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -553,6 +659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZLN97H98PA;
 				INFOPLIST_FILE = GMakers/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -560,10 +667,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPs.GMakers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -7,10 +7,11 @@
 
 import UIKit
 
-import Alamofire
 import SnapKit
 
 class BaseViewController: UIViewController {
+  
+  var bottomViewConstraint: NSLayoutConstraint?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +21,12 @@ class BaseViewController: UIViewController {
     self.setNavigation()
     self.setAttribute()
     self.setConstraint()
+    
+    self.addKeyboardNotification()
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
   
   func setNavigation() {}
@@ -60,5 +67,54 @@ class BaseViewController: UIViewController {
     }
     
     self.present(alertController, animated: true)
+  }
+  
+  
+  
+  // MARK: - Keyboard
+  
+  func addKeyboardNotification() {
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotificationAction(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotificationAction(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
+  
+  @objc private func keyboardNotificationAction(_ notification: Notification) {
+    guard
+      let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
+      let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt,
+      let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+      else { return }
+    let height = keyboardFrame.cgRectValue.height - view.safeAreaInsets.bottom
+    
+    UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curve), animations: { [weak self] in
+      guard let self = self else { return }
+      
+      switch notification.name {
+      case UIResponder.keyboardWillShowNotification:
+        self.bottomViewConstraint?.constant = -height
+        
+      case UIResponder.keyboardWillHideNotification:
+        self.bottomViewConstraint?.constant = 0
+        
+      default:
+        break
+      }
+      self.view.layoutIfNeeded()
+    })
+  }
+  
+  
+  
+  // MARK: - IndicatoerViewController
+  
+  func presentIndicatorViewController() {
+    let vcIndicator = IndicatorViewController()
+    vcIndicator.modalPresentationStyle = .overFullScreen
+    present(vcIndicator, animated: false)
+  }
+  
+  func dismissIndicatorViewController() {
+    guard let vcIndicator = presentedViewController as? IndicatorViewController else { return }
+    vcIndicator.dismiss(animated: false)
   }
 }
