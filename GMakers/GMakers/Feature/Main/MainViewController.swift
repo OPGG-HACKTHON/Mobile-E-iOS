@@ -16,7 +16,6 @@ final class MainViewController: BaseViewController {
   private let naviView = UIView()
   private let logoLabel = UILabel()
   private let plusButton = UIButton()
-  private let menuButton = UIButton()
   private let searchLabel = UILabel()
   private let searchImageView = UIImageView()
   private let myCardButton = UIButton()
@@ -209,9 +208,6 @@ final class MainViewController: BaseViewController {
     self.plusButton.setImage(UIImage(named: "main_add"), for: .normal)
     self.plusButton.addTarget(self, action: #selector(self.addDidTap(_:)), for: .touchUpInside)
     
-    self.menuButton.setImage(UIImage(named: "main_menu"), for: .normal)
-    self.menuButton.addTarget(self, action: #selector(self.menuDidTap(_:)), for: .touchUpInside)
-    
     self.searchLabel.text = "      소환사검색"
     self.searchLabel.textColor = .myA9ACB3
     self.searchLabel.font = UIFont.NotoSansKR.medium(size: 12)
@@ -266,12 +262,7 @@ final class MainViewController: BaseViewController {
     
     self.plusButton.snp.makeConstraints { make in
       make.centerY.equalToSuperview()
-      make.trailing.equalTo(self.menuButton.snp.leading).offset(-10)
-    }
-    
-    self.menuButton.snp.makeConstraints { make in
-      make.centerY.equalToSuperview()
-      make.trailing.equalTo(-10)
+      make.trailing.equalTo(-20)
     }
     
     self.searchLabel.snp.makeConstraints { make in
