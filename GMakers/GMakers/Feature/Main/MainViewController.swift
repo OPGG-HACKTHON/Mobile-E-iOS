@@ -21,11 +21,13 @@ final class MainViewController: BaseViewController {
   private let myCardButton = UIButton()
   private let bookmarkButton = UIButton()
   private let indicatorView = UIView()
+  private let scrollView = UIScrollView()
   private let cardCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
     return UICollectionView(frame: .zero, collectionViewLayout: layout)
   }()
+  private let bookmarkLabel = UILabel()
   
   private var profiles = [ProfileCardModel]()
   
@@ -136,13 +138,18 @@ final class MainViewController: BaseViewController {
     self.myCardButton.isSelected = self.myCardButton == sender
     self.bookmarkButton.isSelected = self.bookmarkButton == sender
     
-    let offset = self.myCardButton == sender ? 0 : 60
-    
+    let indicatorOffset = self.myCardButton == sender ? 0 : 60
+    let scrollViewOffset = self.myCardButton == sender ? 0 : self.view.frame.width
     UIView.animate(withDuration: 0.2) { [weak self] in
       guard let self = self else { return }
+      
       self.indicatorView.snp.updateConstraints { make in
-        make.leading.equalTo(self.myCardButton).offset(offset)
+        make.leading.equalTo(self.myCardButton).offset(indicatorOffset)
       }
+      
+      let point = CGPoint(x: scrollViewOffset, y: 0)
+      self.scrollView.setContentOffset(point, animated: true)
+      
       self.view.layoutIfNeeded()
     }
   }
@@ -200,16 +207,28 @@ final class MainViewController: BaseViewController {
     
     self.indicatorView.backgroundColor = UIColor.my6540E9
     
+//    self.scrollView.isScrollEnabled = false
+    self.scrollView.isPagingEnabled = true
+    self.scrollView.delegate = self
+    
     self.cardCollectionView.backgroundColor = .white
     self.cardCollectionView.alwaysBounceVertical = true
     self.cardCollectionView.register(GCardCollectionViewCell.self, forCellWithReuseIdentifier: GCardCollectionViewCell.identifier)
     self.cardCollectionView.dataSource = self
     self.cardCollectionView.delegate = self
+    
+    self.bookmarkLabel.text = "준비 중입니다"
+    self.bookmarkLabel.textAlignment = .center
+    self.bookmarkLabel.font = UIFont.NotoSansKR.bold(size: 40)
   }
   
   override func setConstraint() {
-    [self.naviView, self.searchLabel, self.searchImageView, self.myCardButton, self.bookmarkButton, self.indicatorView, self.cardCollectionView].forEach {
+    [self.naviView, self.searchLabel, self.searchImageView, self.myCardButton, self.bookmarkButton, self.indicatorView, self.scrollView].forEach {
       self.view.addSubview($0)
+    }
+    
+    [self.cardCollectionView, self.bookmarkLabel].forEach {
+      self.scrollView.addSubview($0)
     }
     
     self.naviView.snp.makeConstraints { make in
@@ -263,9 +282,22 @@ final class MainViewController: BaseViewController {
       make.height.equalTo(2)
     }
     
-    self.cardCollectionView.snp.makeConstraints { make in
+    self.scrollView.snp.makeConstraints { make in
       make.top.equalTo(self.indicatorView.snp.bottom).offset(8)
       make.leading.trailing.bottom.equalToSuperview()
+    }
+    
+    self.cardCollectionView.snp.makeConstraints { make in
+      make.top.leading.bottom.equalToSuperview()
+      make.width.equalTo(self.view)
+      make.height.equalToSuperview()
+    }
+    
+    self.bookmarkLabel.snp.makeConstraints { make in
+      make.top.trailing.bottom.equalToSuperview()
+      make.leading.equalTo(self.cardCollectionView.snp.trailing)
+      make.width.equalTo(self.view)
+      make.height.equalToSuperview()
     }
   }
 }
@@ -314,5 +346,28 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     let width = collectionView.frame.width - 40
     let height = width * 206 / 335
     return CGSize(width: width, height: height)
+  }
+}
+
+
+
+extension MainViewController: UIScrollViewDelegate {
+  
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    let isFirst = scrollView.contentOffset.x < 1
+    
+    self.myCardButton.isSelected = isFirst
+    self.bookmarkButton.isSelected = !isFirst
+    
+    let indicatorOffset = isFirst ? 0 : 60
+    UIView.animate(withDuration: 0.2) { [weak self] in
+      guard let self = self else { return }
+      
+      self.indicatorView.snp.updateConstraints { make in
+        make.leading.equalTo(self.myCardButton).offset(indicatorOffset)
+      }
+      
+      self.view.layoutIfNeeded()
+    }
   }
 }
