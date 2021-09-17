@@ -80,36 +80,6 @@ final class MainViewController: BaseViewController {
        }
   }
   
-  private func deleteProfile() {
-    guard let id = self.profiles.first?.profileID else { return }
-    
-    let headers: HTTPHeaders = [
-      "Authorization": "Bearer \(UserDefaultsManager.token!)",
-      "Content-Type": "application/json"
-    ]
-    
-    self.presentIndicatorViewController()
-    
-    AF.request(
-      "http://52.79.197.237:8080/api/profiles/\(id)",
-      method: .delete,
-      parameters: nil,
-      headers: headers).response { [weak self] response in
-        guard let self = self else { return }
-        
-        self.dismissIndicatorViewController()
-        
-        switch response.result {
-        case .failure(let error):
-          self.alertBase(title: "error delete", message: error.localizedDescription, handler: nil)
-          
-        case .success:
-          self.profiles.remove(at: 0)
-          self.cardCollectionView.reloadData()
-        }
-       }
-  }
-  
   private func getProfileInfo(index: Int) {
     let id = self.profiles[index].profileID
     
@@ -154,10 +124,6 @@ final class MainViewController: BaseViewController {
   @objc private func longPress(_ sender: UILongPressGestureRecognizer) {
     UserDefaultsManager.token = nil
     WindowManager.set(.splash)
-  }
-  
-  @objc private func menuDidTap(_ sender: UIButton) {
-    self.deleteProfile()
   }
   
   @objc private func addDidTap(_ sender: UIButton) {

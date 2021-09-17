@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import Alamofire
 
 final class ProfileViewController: BaseViewController {
   
   private let backImageView = UIImageView()
   private let naviView = UIView()
   private let backButton = UIButton()
-  private let editButton = UIButton()
-  private let bookmarkButton = UIButton()
+  private let trashButton = UIButton()
   private let scrollView = UIScrollView()
   private let verifyButton = UIButton()
   private let cardCollectionView: UICollectionView = {
@@ -51,18 +51,48 @@ final class ProfileViewController: BaseViewController {
   
   
   
+  // MARK: - Interface
+  
+  private func deleteProfile() {
+    let id = self.profileInfo.profileID
+    
+    let headers: HTTPHeaders = [
+      "Authorization": "Bearer \(UserDefaultsManager.token!)",
+      "Content-Type": "application/json"
+    ]
+    
+    self.presentIndicatorViewController()
+    
+    AF.request(
+      "http://52.79.197.237:8080/api/profiles/\(id)",
+      method: .delete,
+      parameters: nil,
+      headers: headers).response { [weak self] response in
+        guard let self = self else { return }
+        
+        self.dismissIndicatorViewController()
+        
+        switch response.result {
+        case .failure(let error):
+          self.alertBase(title: "error delete", message: error.localizedDescription, handler: nil)
+          
+        case .success:
+          self.navigationController?.popViewController(animated: true)
+        }
+       }
+  }
+  
+  
+  
+  
   // MARK: - Action
   
   @objc private func backDidTap(_ sender: UIButton) {
     self.navigationController?.popViewController(animated: true)
   }
   
-  @objc private func editDidTap(_ sender: UIButton) {
-    
-  }
-  
-  @objc private func bookmarkDidTap(_ sender: UIButton) {
-    
+  @objc private func trashDidTap(_ sender: UIButton) {
+    self.deleteProfile()
   }
   
   @objc private func verifyDidTap(_ sender: UIButton) {
@@ -96,11 +126,10 @@ final class ProfileViewController: BaseViewController {
     self.backButton.setImage(UIImage(named: "back_white"), for: .normal)
     self.backButton.addTarget(self, action: #selector(self.backDidTap(_:)), for: .touchUpInside)
     
-    self.editButton.setImage(UIImage(named: "edit_white"), for: .normal)
-    self.editButton.addTarget(self, action: #selector(self.editDidTap(_:)), for: .touchUpInside)
-    
-    self.bookmarkButton.setImage(UIImage(named: "bookmark_white"), for: .normal)
-    self.bookmarkButton.addTarget(self, action: #selector(self.bookmarkDidTap(_:)), for: .touchUpInside)
+    let tempImage = UIImage(systemName: "trash")
+    let tempColorImage = tempImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
+    self.trashButton.setImage(tempColorImage, for: .normal)
+    self.trashButton.addTarget(self, action: #selector(self.trashDidTap(_:)), for: .touchUpInside)
     
     self.verifyButton.isHidden = self.profileInfo.certified
     self.verifyButton.backgroundColor = .my6540E9
@@ -179,7 +208,7 @@ final class ProfileViewController: BaseViewController {
       self.view.addSubview($0)
     }
     
-    [self.backButton, self.editButton, self.bookmarkButton].forEach {
+    [self.backButton, self.trashButton].forEach {
       self.naviView.addSubview($0)
     }
     
@@ -201,14 +230,9 @@ final class ProfileViewController: BaseViewController {
       make.leading.equalTo(20)
     }
     
-    self.editButton.snp.makeConstraints { make in
+    self.trashButton.snp.makeConstraints { make in
       make.centerY.equalToSuperview()
-      make.trailing.equalTo(self.bookmarkButton.snp.leading).offset(-16)
-    }
-    
-    self.bookmarkButton.snp.makeConstraints { make in
-      make.centerY.equalToSuperview()
-      make.trailing.equalToSuperview().inset(20)
+      make.trailing.equalTo(-20)
     }
     
     self.scrollView.snp.makeConstraints { make in
