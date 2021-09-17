@@ -251,7 +251,7 @@ final class MainViewController: BaseViewController {
       make.height.equalTo(60)
     }
     
-    [self.logoLabel, self.plusButton, self.menuButton].forEach {
+    [self.logoLabel, self.plusButton].forEach {
       self.naviView.addSubview($0)
     }
     
